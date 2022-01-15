@@ -1,11 +1,25 @@
-import XCTest
 @testable import swiftdi
+import XCTest
+
+class ExampleInjectedService: Injectable {
+    var text: String = "Hello, World!"
+}
+
+class ExampleService: Injectable {
+    @Inject
+    var injectedService: ExampleInjectedService
+
+    func isAlive() -> Bool {
+        return true
+    }
+}
 
 final class swiftdiTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(swiftdi().text, "Hello, World!")
+    @Inject
+    var service: ExampleService
+
+    func testDidInitilized() throws {
+        XCTAssertEqual(service.isAlive(), true)
+        XCTAssertEqual(service.injectedService.text, "Hello, World!")
     }
 }
