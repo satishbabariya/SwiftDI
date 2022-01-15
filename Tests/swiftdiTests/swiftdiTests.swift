@@ -1,4 +1,4 @@
-@testable import swiftdi
+@testable import SwiftDI
 import XCTest
 
 class ExampleInjectedService: Injectable {
@@ -14,7 +14,7 @@ class ExampleService: Injectable {
     }
 }
 
-final class swiftdiTests: XCTestCase {
+final class SwiftDITests: XCTestCase {
     @Inject
     var service: ExampleService
 

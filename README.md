@@ -1,3 +1,3 @@
-# swiftdi
+# SwiftDI
 
 A description of this package.
