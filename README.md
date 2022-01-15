@@ -10,6 +10,9 @@ class ExampleInjectedService: Injectable {
 class ExampleService {
     @Inject
     var injectedService: ExampleInjectedService
+    
+    @InjectSingleton
+    var singleInstance: ExampleService
 }
 
 ```
